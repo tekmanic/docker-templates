@@ -1,1 +1,41 @@
-TODO
+<?xml version="1.0" encoding="utf-8"?>
+<Containers>
+  <Date>2020-12-02</Date>
+  <Beta>True</Beta>
+  <Category>Bookmark</Category>
+  <Name>ShioriBookmarkManager</Name>
+  <Project>https://github.com/go-shiori/shiori</Project>
+  <Changes>
+[center][img width='155px' src='https://d2631fvi2jdnb6.cloudfront.net/docker/limetech.png'][/center]
+
+[center][font size=4]Deb-Shiori Change Log[/font][/center]
+
+[font size=3]2020.12.02[/font]
+- Initial Release
+  </Changes>
+  <Overview>
+    Shiori is a simple bookmarks manager written in the Go language. Intended as a simple clone of Pocket. You can use it as a command line application or as a web application.
+  </Overview>
+  <Description>
+    Shiori is a simple bookmarks manager written in the Go language. Intended as a simple clone of Pocket. You can use it as a command line application or as a web application.
+  </Description>
+  <Registry>https://hub.docker.com/repository/docker/tekmanic/deb-shiori</Registry>
+  <GitHub>https://github.com/go-shiori/shiori</GitHub>
+  <Repository>tekmanic/deb-shiori</Repository>
+  <Support>tbd</Support>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish/>
+  </Networking>
+  <Environment/>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/shiori</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <WebUI>http://[IP]:[PORT:9000]/web/index.html</WebUI>
+  <Banner></Banner>
+  <Icon>https://d2631fvi2jdnb6.cloudfront.net/docker/limetech.png</Icon>
+</Containers>
