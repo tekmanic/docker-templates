@@ -1,1 +1,24 @@
-TODO
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>deb-postgres</Name>
+  <Repository>tekmanic/deb-postgres:latest</Repository>
+  <Registry>https://hub.docker.com/repository/docker/tekmanic/deb-postgres</Registry>
+  <Network>bridge</Network>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support></Support>
+  <Project>https://github.com/postgres</Project>
+  <Overview>Postgresql Database.[br][br][b][u][span style='color: #ff9900;']Default user/password[/span][/u][/b][br]User: [B][u]postgres[/B][/u][br]Password: [B][u]postgres[/B][/u][/b][br][/br]</Overview>
+  <Category>Productivity: Network:Web Status:Stable</Category>
+  <WebUI>http://[IP]:[PORT:5432]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/A75G/docker-templates/master/templates/shiori.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/A75G/docker-templates/master/templates/icons/shiori.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Postgresql Database.[br][br][b][u][span style='color: #ff9900;']Default user/password[/span][/u][/b][br]User: [B][u]postgres[/B][/u][br]Password: [B][u]postgres[/B][/u][/b][br][/br]</Description>
+  <Labels/>
+  <Config Name="Port" Target="5432" Default="5432" Mode="tcp" Description="Port" Type="Port" Display="always" Required="false" Mask="false">5432</Config>
+  <Config Name="Appdata" Target="/srv/deb-postgres/" Default="/mnt/user/appdata/deb-postgres/" Mode="rw" Description="Appdata" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/deb-postgres/</Config>
+</Container>
