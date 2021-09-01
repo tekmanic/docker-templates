@@ -11,8 +11,8 @@
   <Overview>Postgresql Database.[br][br][b][u][span style='color: #ff9900;']Default user/password[/span][/u][/b][br]User: [B][u]postgres[/B][/u][br]Password: [B][u]postgres[/B][/u][/b][br][/br]</Overview>
   <Category>Productivity: Network:Web Status:Stable</Category>
   <WebUI>http://[IP]:[PORT:5432]/</WebUI>
-  <TemplateURL>https://raw.githubusercontent.com/A75G/docker-templates/master/templates/shiori.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/A75G/docker-templates/master/templates/icons/shiori.png</Icon>
+  <TemplateURL>https://raw.githubusercontent.com/tekmanic/docker-templates/main/tekmanic/postgres.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/tekmanic/docker-templates/main/tekmanic/icons/postgres.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <DonateText/>
