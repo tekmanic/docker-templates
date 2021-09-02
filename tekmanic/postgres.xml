@@ -1,15 +1,36 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>deb-postgres</Name>
+  <Name>tekmanic-postgres</Name>
   <Repository>tekmanic/deb-postgres:latest</Repository>
   <Registry>https://hub.docker.com/repository/docker/tekmanic/deb-postgres</Registry>
-  <Network>bridge</Network>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>5432</HostPort>
+        <ContainerPort>5432</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
   <Support></Support>
-  <Project>https://github.com/postgres</Project>
-  <Overview>Postgresql Database.[br][br][b][u][span style='color: #ff9900;']Default user/password[/span][/u][/b][br]User: [B][u]postgres[/B][/u][br]Password: [B][u]postgres[/B][/u][/b][br][/br]</Overview>
-  <Category>Productivity: Network:Web Status:Stable</Category>
+  <Project>https://www.postgresql.org/</Project>
+  <Overview>
+    PostgreSQL is a powerful, open source object-relational database system. Based on official Postgres Docker image.
+  </Overview>
+  <Description>
+    PostgreSQL is a powerful, open source object-relational database system. Uses official Postgres Docker image @ https://hub.docker.com/_/postgres/
+    [br][br]
+
+    [b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]
+    [b]/mnt/cache/appdata/postgres[/b] This is where Postgres will store it's data.[br]
+    [b]Port 5432[/b] Default connection port[br]
+    [b]POSTGRES_PASSWORD[/b] Superuser password. [b]REQUIRED TO SET[/b], otherwise connecting outside container will not be possible.[br]
+    [b]POSTGRES_USER[/b] Username for the superuser. Defaults to postgres if not set.[br]
+    [b]POSTGRES_DB[/b] Used to define different name for default database. Defaults to user if not set.[br]
+  </Description><Category>Productivity, Tools, Network:Management</Category>
   <WebUI>http://[IP]:[PORT:5432]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/tekmanic/docker-templates/main/tekmanic/postgres.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/tekmanic/docker-templates/main/tekmanic/icons/postgres.png</Icon>
@@ -17,8 +38,31 @@
   <PostArgs/>
   <DonateText/>
   <DonateLink/>
-  <Description>Postgresql Database.[br][br][b][u][span style='color: #ff9900;']Default user/password[/span][/u][/b][br]User: [B][u]postgres[/B][/u][br]Password: [B][u]postgres[/B][/u][/b][br][/br]</Description>
   <Labels/>
-  <Config Name="Port" Target="5432" Default="5432" Mode="tcp" Description="Port" Type="Port" Display="always" Required="false" Mask="false">5432</Config>
-  <Config Name="Appdata" Target="/srv/deb-postgres/" Default="/mnt/user/appdata/deb-postgres/" Mode="rw" Description="Appdata" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/deb-postgres/</Config>
+  <Config Name="TCP Interface Port" Target="5432" Default="5432" Mode="tcp" Description="This is Postgres TCP connection port." Type="Port" Display="always" Required="true" Mask="false">5432</Config>
+  <Config Name="Database Storage Path" Target="/var/lib/postgresql/data" Default="/mnt/user/appdata/tekmanic-postgres/" Mode="rw" Description="Database Storage Path" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/tekmanic-postgres/</Config>
+  <Environment>
+    <Variable>
+      <Name>POSTGRES_USER</Name>
+      <Value>postgres</Value>
+    </Variable>
+    <Variable>
+      <Name>POSTGRES_PASSWORD</Name>
+      <Value>postgres</Value>
+    </Variable>
+    <Variable>
+      <Name>POSTGRES_DB</Name>
+      <Value>postgres</Value>
+    </Variable>
+  </Environment>
+  <Config Name="POSTGRES_PASSWORD" Target="POSTGRES_PASSWORD" Default="" Mode="" Description="Container Variable: POSTGRES_PASSWORD" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="POSTGRES_USER" Target="POSTGRES_USER" Default="" Mode="" Description="Container Variable: POSTGRES_USER" Type="Variable" Display="always" Required="true" Mask="false">postgres</Config>
+  <Config Name="POSTGRES_DB" Target="POSTGRES_DB" Default="" Mode="" Description="Container Variable: POSTGRES_DB" Type="Variable" Display="always" Required="true" Mask="false">postgres</Config>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/cache/appdata/tekmanic-postgres</HostDir>
+      <ContainerDir>/var/lib/postgresql/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
 </Container>
