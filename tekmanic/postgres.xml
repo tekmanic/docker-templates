@@ -55,7 +55,7 @@
       <Value>postgres</Value>
     </Variable>
   </Environment>
-  <Config Name="POSTGRES_PASSWORD" Target="POSTGRES_PASSWORD" Default="" Mode="" Description="Container Variable: POSTGRES_PASSWORD" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="POSTGRES_PASSWORD" Target="POSTGRES_PASSWORD" Default="" Mode="" Description="Container Variable: POSTGRES_PASSWORD" Type="Variable" Display="always" Required="true" Mask="false">postgres</Config>
   <Config Name="POSTGRES_USER" Target="POSTGRES_USER" Default="" Mode="" Description="Container Variable: POSTGRES_USER" Type="Variable" Display="always" Required="true" Mask="false">postgres</Config>
   <Config Name="POSTGRES_DB" Target="POSTGRES_DB" Default="" Mode="" Description="Container Variable: POSTGRES_DB" Type="Variable" Display="always" Required="true" Mask="false">postgres</Config>
   <Data>
