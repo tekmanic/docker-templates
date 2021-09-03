@@ -61,7 +61,7 @@
   <Data>
     <Volume>
       <HostDir>/mnt/cache/appdata/tekmanic-postgres</HostDir>
-      <ContainerDir>/var/lib/postgresql/data</ContainerDir>
+      <ContainerDir>/data</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
   </Data>
