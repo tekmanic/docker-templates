@@ -12,7 +12,7 @@
   <Category>Productivity: Network:Web Status:Stable</Category>
   <WebUI>http://[IP]:[PORT:8080]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/tekmanic/docker-templates/main/tekmanic/shiori.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/tekmanic/docker-templates/main/tekmanic/shiori.png</Icon>
+  <Icon>https://raw.githubusercontent.com/tekmanic/docker-templates/main/tekmanic/icons/shiori.png</Icon>
   <ExtraParams/>
   <PostArgs/>
   <DonateText/>
