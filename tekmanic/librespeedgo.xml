@@ -2,10 +2,10 @@
 <Container>
   <Beta>True</Beta>
   <Category>Tools:</Category>
-  <Name>tekmanic-gorush</Name>
+  <Name>tekmanic-speedtest</Name>
   <Description></Description>
-  <Registry>https://hub.docker.com/r/appleboy/gorush/</Registry>
-  <Repository>appleboy/gorush:latest</Repository>
+  <Registry>https://hub.docker.com/r/misteryiz/speedtest-go/</Registry>
+  <Repository>misteryiz/speedtest-go:latest</Repository>
   <Environment>
     <Variable>
       <Name>detach</Name>
@@ -24,6 +24,6 @@
   </Networking>
   <Version></Version>
    <WebUI>http://[IP]:[PORT:8080]/</WebUI>
-  <TemplateURL>https://raw.githubusercontent.com/tekmanic/docker-templates/main/tekmanic/gorush.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/tekmanic/docker-templates/main/tekmanic/icons/gorush.png</Icon>
+  <TemplateURL>https://raw.githubusercontent.com/tekmanic/docker-templates/main/tekmanic/librespeedgo.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/tekmanic/docker-templates/main/tekmanic/icons/librespeed.png</Icon>
 </Container>

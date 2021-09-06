@@ -1,1 +1,29 @@
-TODO
+<?xml version="1.0" encoding="utf-8"?>
+<Container>
+  <Beta>True</Beta>
+  <Category>Tools:</Category>
+  <Name>tekmanic-fathom</Name>
+  <Description></Description>
+  <Registry>https://hub.docker.com/r/usefathom/fathom/</Registry>
+  <Repository>usefathom/fathom:latest</Repository>
+  <Environment>
+    <Variable>
+      <Name>detach</Name>
+      <Value>true</Value>
+    </Variable>
+  </Environment>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8080</HostPort>
+        <ContainerPort>8080</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Version></Version>
+   <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/tekmanic/docker-templates/main/tekmanic/fathom.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/tekmanic/docker-templates/main/tekmanic/icons/fathom.png</Icon>
+</Container>

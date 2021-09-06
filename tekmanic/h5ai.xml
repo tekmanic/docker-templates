@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container>
-  <Beta>False</Beta>
+  <Beta>True</Beta>
 <Category>Cloud: Network:Web</Category>
   <Name>tekmanic-h5ai</Name>
   <Description>
@@ -44,6 +44,6 @@
   <TemplateURL>https://raw.githubusercontent.com/tekmanic/docker-templates/main/tekmanic/h5ai.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/tekmanic/docker-templates/main/tekmanic/icons/h5ai.png</Icon>>
 
-  <WebUI>/</WebUI>
+  <WebUI>http://[IP]:[PORT:8888]/</WebUI>
   
 </Container>

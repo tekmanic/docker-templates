@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container>
   <Beta>False</Beta>
-<Category>Tools:</Category>
+  <Category>Tools:</Category>
   <Name>tekmanic-cadvisor</Name>
   <Description>cAdvisor (Container Advisor) provides container users an understanding of the resource usage and performance characteristics of their running containers. It is a running daemon that collects, aggregates, processes, and exports information about running containers. Specifically, for each container it keeps resource isolation parameters, historical resource usage, and histograms of complete historical resource usage. This data is exported by container and machine-wide.</Description>
   <Registry>https://registry.hub.docker.com/u/google/cadvisor/</Registry>
@@ -45,7 +45,7 @@
     </Volume>
   </Data>
   <Version></Version>
-  <WebUI></WebUI>
+   <WebUI>http://[IP]:[PORT:8081]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/tekmanic/docker-templates/main/tekmanic/cadvisor.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/tekmanic/docker-templates/main/tekmanic/icons/cadvisor.png</Icon>
 </Container>
