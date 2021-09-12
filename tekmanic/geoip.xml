@@ -1,1 +1,30 @@
-TODO
+<?xml version="1.0" encoding="utf-8"?>
+<Container>
+  <Beta>True</Beta>
+  <Category>Tools:</Category>
+  <Name>tekmanic-geoip</Name>
+  <Description></Description>
+  <Registry>https://hub.docker.com/r/tekmanic/deb-geoip/</Registry>
+  <Repository>tekmanic/deb-geoip:latest</Repository>
+  <Environment>
+    <Variable>
+      <Name>detach</Name>
+      <Value>true</Value>
+    </Variable>
+  </Environment>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>3000</HostPort>
+        <ContainerPort>3000</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Config Name="TCP Interface Port" Target="3000" Default="3000" Mode="tcp" Description="This is the geoip main port." Type="Port" Display="always" Required="false" Mask="false">3000</Config>
+  <Version></Version>
+   <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/tekmanic/docker-templates/main/tekmanic/geoip.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/tekmanic/docker-templates/main/tekmanic/icons/geoip.png</Icon>
+</Container>
