@@ -22,7 +22,6 @@
       </Port>
     </Publish>
   </Networking>
-  <Config Name="TCP Interface Port" Target="3000" Default="3000" Mode="tcp" Description="This is the geoip main port." Type="Port" Display="always" Required="false" Mask="false">3000</Config>
   <Version></Version>
    <WebUI>http://[IP]:[PORT:3000]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/tekmanic/docker-templates/main/tekmanic/geoip.xml</TemplateURL>
