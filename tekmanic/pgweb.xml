@@ -4,8 +4,8 @@
   <Category>Tools:</Category>
   <Name>tekmanic-pgweb</Name>
   <Description></Description>
-  <Registry>https://hub.docker.com/r/sosedoff/pgweb/</Registry>
-  <Repository>sosedoff/pgweb:latest</Repository>
+  <Registry>https://hub.docker.com/r/tekmanic/deb-pgweb/</Registry>
+  <Repository>tekmanic/deb-pgweb:latest</Repository>
   <Environment>
     <Variable>
       <Name>detach</Name>
@@ -16,14 +16,14 @@
     <Mode>bridge</Mode>
     <Publish>
       <Port>
-        <HostPort>8080</HostPort>
-        <ContainerPort>8080</ContainerPort>
+        <HostPort>8081</HostPort>
+        <ContainerPort>8081</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
     </Publish>
   </Networking>
   <Version></Version>
-   <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+   <WebUI>http://[IP]:[PORT:8081]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/tekmanic/docker-templates/main/tekmanic/pgweb.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/tekmanic/docker-templates/main/tekmanic/icons/pgweb.png</Icon>
 </Container>

@@ -1,0 +1,28 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Date>2021-12-31</Date>
+  <Beta>False</Beta>
+  <Category>Cloud: Network:Management Productivity: Tools:</Category>
+  <Name>Docker Registry</Name>
+  <Project>https://github.com/distribution/distribution</Project>
+  <Overview>
+    Docker Registry is used to store and distribute Docker images using HTTP API. This allows you host your own private Registry and store your images. Uses official Docker Registry image @ https://hub.docker.com/_/registry/
+    [br][br]
+
+    [b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]
+    [b]/mnt/user/appdata/registry[/b] This is where Registry will store it's data.[br]
+    [b]Port 5000[/b] Default connection port[br]
+  </Overview>
+  <Registry>https://registry.hub.docker.com/_/registry/</Registry>
+  <GitHub>https://github.com/docker/distribution-library-image</GitHub>
+  <Repository>registry:2</Repository>
+  <Support>https://lime-technology.com/forums/topic/69492-support-jj9987-docker-registry/</Support>
+  <WebUI/>
+  <TemplateURL>https://raw.githubusercontent.com/tekmanic/docker-templates/main/tekmanic/registry.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/tekmanic/docker-templates/main/tekmanic/icons/registry.png</Icon>
+  <Privileged>false</Privileged>
+  <Network Default="bridge">bridge</Network>
+  <Config Type="Path" Name="Data Storage Path" Target="/var/lib/registry" Default="/mnt/user/appdata/registry" Mode="rw" Display="advanced-hide" Required="true" Description="This is where Docker Registry will store it's data."/>
+  <Config Type="Port" Name="Web Port" Target="5000" Default="5000" Mode="tcp" Display="always-hide" Required="true" Description="This is Docker Registry TCP port."/>
+</Container>

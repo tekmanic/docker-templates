@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Date>2021-12-31</Date>
+  <Beta>False</Beta>
+  <Category>Network:Management Productivity: Tools:</Category>
+  <Name>Redis</Name>
+  <Project>https://redis.io/</Project>
+  <Description>
+    Redis is an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker. It supports data structures such as strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs and geospatial indexes with radius queries. Redis has built-in replication, Lua scripting, LRU eviction, transactions and different levels of on-disk persistence, and provides high availability via Redis Sentinel and automatic partitioning with Redis Cluster. Uses official Redis Docker image @ https://hub.docker.com/_/redis/
+    [br][br]
+
+    [b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]
+    [b]Port 6379[/b] Default connection port[br]
+  </Description>
+  <Overview>
+    Redis is an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker. Based on official Redis Docker image.
+  </Overview>
+  <GitHub>https://github.com/tekmanic/deb-redis</GitHub>
+  <Repository>tekmanic/deb-redis:latest</Repository>
+  <Registry>https://hub.docker.com/r/tekmanic/deb-redis/</Registry>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>6379</HostPort>
+        <ContainerPort>6379</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Network Default="bridge">bridge</Network>
+  <Environment/>
+  <Data/>
+  <WebUI/>
+  <TemplateURL>https://raw.githubusercontent.com/tekmanic/docker-templates/main/tekmanic/redis.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/tekmanic/docker-templates/main/tekmanic/icons/redis.png</Icon>
+  <Config Type="Port" Name="Redis Port" Target="6379" Default="6379" Mode="tcp" Display="always-hide" Required="true" Description="This is Redis default connection port.">6379</Config>
+  <ExtraParams></ExtraParams>
+</Container>
+
