@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<Container>
+  <TemplateURL>https://raw.githubusercontent.com/tekmanic/docker-templates/main/tekmanic/duplicati.xml</TemplateURL>
+  <Date>2022-01-29</Date>
+  <Beta>False</Beta>
+  <Name>tekmanic-duplicati</Name>
+  <Project>https://www.duplicati.com/</Project>
+  <Repository>tekmanic/deb-duplicati</Repository>
+  <Registry>https://hub.docker.com/r/tekmanic/deb-duplicati/</Registry>
+  <Network>bridge</Network>
+  <Privileged>false</Privileged>
+  <Overview>Free backup software to store encrypted backups online, Duplicati works with standard protocols like FTP, SSH, WebDAV as well as popular services like Microsoft OneDrive, Amazon Cloud Drive and S3, Google Drive, box.com, Mega, hubiC and many others.</Overview>
+  <Category>Backup: Cloud: Network:Other Productivity: Tools:</Category>
+  <WebUI>http://[IP]:[PORT:8200]/</WebUI>
+  <Icon>https://raw.githubusercontent.com/tekmanic/docker-templates/main/tekmanic/icons/duplicati.png</Icon>
+  <Description>Free backup software to store encrypted backups online, Duplicati works with standard protocols like FTP, SSH, WebDAV as well as popular services like Microsoft OneDrive, Amazon Cloud Drive and S3, Google Drive, box.com, Mega, hubiC and many others.
+  [br][br]
+  [b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]
+  [b]/config[/b] Where duplicati should store settings, logs and configuration[br]
+  [b]/tmp[/b] Where duplicati stores /tmp files.
+  [b]/backups[/b] Path to your backup destination[br]
+  [b]/source[/b] Path to your backup source[br]</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8200</HostPort>
+        <ContainerPort>8200</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+        <Volume>
+      <ContainerDir>/tmp</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <ContainerDir>/backups</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <ContainerDir>/source</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+    <Environment>
+    <Variable>
+      <Value>99</Value>
+      <Name>PUID</Name>
+    </Variable>
+    <Variable>
+      <Value>100</Value>
+      <Name>PGID</Name>
+    </Variable>
+  </Environment>
+</Container>
