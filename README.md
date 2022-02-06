@@ -1,6 +1,6 @@
 # Description
 
-unRAID Docker Templates for Docker images in the "binhex" repository.
+unRAID Docker Templates for Docker images in the "tekmanic" repository.
 
 ## Usage
 

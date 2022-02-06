@@ -108,5 +108,5 @@
   </Data>
   <Banner></Banner>
   <WebUI>http://[IP]:[PORT:8222]/</WebUI>
-  <Icon>https://raw.githubusercontent.com/tekmanic/docker-templates/master/tekmanic/images/minecraft.png</Icon>
+  <Icon>https://raw.githubusercontent.com/tekmanic/docker-templates/master/tekmanic/icons/minecraft.png</Icon>
 </Containers>
