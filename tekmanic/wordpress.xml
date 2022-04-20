@@ -1,72 +1,111 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Container>
-  <Beta>True</Beta>
-  <Category>Other Network:Web Status:Stable</Category>
+<?xml version="1.0"?>
+<Container version="2">
   <Name>tekmanic-wordpress</Name>
-  <Description>WordPress is a free and open source blogging tool and a content management system (CMS) based on PHP and MySQL, which runs on a web hosting service.
-   [br][br]
-This is a customized version of wordpress intended for development, allowing to get upto speed quickly. Some features:[br]
-- Uses a Mariadb internal database (no need for docker-compose or external database)[br]
-- Set the site title, admin details on initial startup[br]
-- Automatically install the desired plugins using wp-cli[br]
-- Can enable basic auth on the site to limit who can access initially[br] </Description>
-  <Project>https://wordpress.org/</Project>
-  <Support>https://github.com/tekmanic/deb-wordpress</Support>
-  <Registry>https://hub.docker.com/r/tekmanic/deb-wordpress/</Registry>
   <Repository>tekmanic/deb-wordpress:latest</Repository>
-  <GitHub>https://github.com/tekmanic/deb-wordpress</GitHub>
-  <Environment>
-    <Variable>
-      <Name>SERVER_NAME</Name>
-      <Value>localhost</Value>
-    </Variable>
-    <Variable>
-      <Name>ADMIN_NAME</Name>
-      <Value>admin</Value>
-    </Variable>
-    <Variable>
-      <Name>ADMIN_PASSWORD</Name>
-      <Value>admin</Value>
-    </Variable>
-    <Variable>
-      <Name>ADMIN_EMAIL</Name>
-      <Value>admin@admin.com</Value>
-    </Variable>
-    <Variable>
-      <Name>PLUGINS</Name>
-      <Value>wordpress-seo acf-to-rest-api</Value>
-    </Variable>
-    <Variable>
-      <Name>TITLE</Name>
-      <Value>WordPress</Value>
-    </Variable>
-    <Variable>
-      <Name>URL</Name>
-      <Value>http://localhost:8000</Value>
-    </Variable>
-    <Variable>
-      <Name>BASIC_AUTH_ENABLED</Name>
-      <Value>false</Value>
-    </Variable>
-    <Variable>
-      <Name>ALLOWED_IP</Name>
-      <Value>127.0.0.1</Value>
-    </Variable>
-  </Environment>
-   <Config Name="Port" Target="80" Default="80" Mode="tcp" Description="Port" Type="Port" Display="always" Required="false" Mask="false">80</Config>
-  <Config Name="Appdata" Target="/usr/src/wordpress/" Default="/mnt/user/appdata/tekmanic-wordpress/" Mode="rw" Description="Appdata" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/tekmanic-wordpress/</Config>
+  <Registry>https://hub.docker.com/r/tekmanic/deb-wordpress/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/tekmanic/deb-wordpress</Support>
+  <Project>https://wordpress.org/</Project>
+  <Overview>WordPress is a free and open source blogging tool and a content management system (CMS) based on PHP and MySQL, which runs on a web hosting service.&#xD;
+   [br][br]&#xD;
+This is a customized version of wordpress intended for development, allowing to get upto speed quickly. Some features:[br]&#xD;
+- Uses a Mariadb internal database (no need for docker-compose or external database)[br]&#xD;
+- Set the site title, admin details on initial startup[br]&#xD;
+- Automatically install the desired plugins using wp-cli[br]&#xD;
+- Can enable basic auth on the site to limit who can access initially[br] </Overview>
+  <Category>Other Network:Web Status:Stable</Category>
+  <WebUI>http://[IP]:[PORT:8000]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/tekmanic/docker-templates/main/tekmanic/wordpress.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/tekmanic/docker-templates/main/tekmanic/icons/wordpress.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DonateText/>
+  <DonateLink/>
+  <Description>WordPress is a free and open source blogging tool and a content management system (CMS) based on PHP and MySQL, which runs on a web hosting service.&#xD;
+   [br][br]&#xD;
+This is a customized version of wordpress intended for development, allowing to get upto speed quickly. Some features:[br]&#xD;
+- Uses a Mariadb internal database (no need for docker-compose or external database)[br]&#xD;
+- Set the site title, admin details on initial startup[br]&#xD;
+- Automatically install the desired plugins using wp-cli[br]&#xD;
+- Can enable basic auth on the site to limit who can access initially[br] </Description>
   <Networking>
     <Mode>bridge</Mode>
     <Publish>
       <Port>
         <HostPort>8000</HostPort>
-        <ContainerPort>8000</ContainerPort>
+        <ContainerPort>80</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
     </Publish>
   </Networking>
-  <Version></Version>
-   <WebUI>http://[IP]:[PORT:8000]/</WebUI>
-  <TemplateURL>https://raw.githubusercontent.com/tekmanic/docker-templates/main/tekmanic/wordpress.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/tekmanic/docker-templates/main/tekmanic/icons/wordpress.png</Icon>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/tekmanic-wordpress/</HostDir>
+      <ContainerDir>/var/www/html</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>localhost</Value>
+      <Name>SERVER_NAME</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>admin</Value>
+      <Name>ADMIN_NAME</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>admin</Value>
+      <Name>ADMIN_PASSWORD</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>admin@admin.com</Value>
+      <Name>ADMIN_EMAIL</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>wordpress-seo acf-to-rest-api contact-form-7</Value>
+      <Name>PLUGINS</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>Wordpress</Value>
+      <Name>TITLE</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>http://hostip:8000</Value>
+      <Name>URL</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>false</Value>
+      <Name>BASIC_AUTH_ENABLED</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>127.0.0.1</Value>
+      <Name>ALLOWED_IP</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Appdata" Target="/var/www/html" Default="/mnt/user/appdata/tekmanic-wordpress/" Mode="rw" Description="Appdata" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/tekmanic-wordpress/</Config>
+  <Config Name="Host Port 1" Target="80" Default="80" Mode="tcp" Description="Container Port: 8000" Type="Port" Display="always" Required="true" Mask="false">8000</Config>
+  <Config Name="Key 1" Target="SERVER_NAME" Default="localhost" Mode="" Description="Container Variable: SERVER_NAME" Type="Variable" Display="always" Required="false" Mask="false">localhost</Config>
+  <Config Name="Key 2" Target="ADMIN_NAME" Default="admin" Mode="" Description="Container Variable: ADMIN_NAME" Type="Variable" Display="always" Required="false" Mask="false">admin</Config>
+  <Config Name="Key 3" Target="ADMIN_PASSWORD" Default="admin" Mode="" Description="Container Variable: ADMIN_PASSWORD" Type="Variable" Display="always" Required="false" Mask="false">admin</Config>
+  <Config Name="Key 4" Target="ADMIN_EMAIL" Default="admin@admin.com" Mode="" Description="Container Variable: ADMIN_EMAIL" Type="Variable" Display="always" Required="false" Mask="false">admin@admin.com</Config>
+  <Config Name="Key 5" Target="PLUGINS" Default="wordpress-seo acf-to-rest-api" Mode="" Description="Container Variable: PLUGINS" Type="Variable" Display="always" Required="false" Mask="false">wordpress-seo acf-to-rest-api contact-form-7</Config>
+  <Config Name="Key 6" Target="TITLE" Default="WordPress" Mode="" Description="Container Variable: TITLE" Type="Variable" Display="always" Required="false" Mask="false">Wordpress</Config>
+  <Config Name="Key 7" Target="URL" Default="http://localhost:8000" Mode="" Description="Container Variable: URL" Type="Variable" Display="always" Required="false" Mask="false">http://hostip:8000</Config>
+  <Config Name="Key 8" Target="BASIC_AUTH_ENABLED" Default="false" Mode="" Description="Container Variable: BASIC_AUTH_ENABLED" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="Key 9" Target="ALLOWED_IP" Default="127.0.0.1" Mode="" Description="Container Variable: ALLOWED_IP" Type="Variable" Display="always" Required="false" Mask="false">127.0.0.1</Config>
 </Container>
