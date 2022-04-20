@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container>
+  <Beta>True</Beta>
+  <Category>Other, Network:Web, Status:Stable</Category>
+  <Name>tekmanic-wordpress</Name>
+  <Description>WordPress is a free and open source blogging tool and a content management system (CMS) based on PHP and MySQL, which runs on a web hosting service.
+   [br][br]
+This is a customized version of wordpress intended for development, allowing to get upto speed quickly. Some features:[br]
+- Uses a Mariadb internal database (no need for docker-compose or external database)[br]
+- Set the site title, admin details on initial startup[br]
+- Automatically install the desired plugins using wp-cli[br]
+- Can enable basic auth on the site to limit who can access initially[br] </Description>
+  <Project>https://wordpress.org/</Project>
+  <Registry>https://hub.docker.com/r/tekmanic/deb-wordpress/</Registry>
+  <Repository>tekmanic/deb-wordpress:latest</Repository>
+    <GitHub>https://github.com/tekmanic/deb-wordpress</GitHub>
+  <Environment>
+    <Variable>
+      <Name>SERVER_NAME</Name>
+      <Value>localhost</Value>
+    </Variable>
+    <Variable>
+      <Name>ADMIN_NAME</Name>
+      <Value>admin</Value>
+    </Variable>
+    <Variable>
+      <Name>ADMIN_PASSWORD</Name>
+      <Value>admin</Value>
+    </Variable>
+    <Variable>
+      <Name>ADMIN_EMAIL</Name>
+      <Value>admin@admin.com</Value>
+    </Variable>
+    <Variable>
+      <Name>PLUGINS</Name>
+      <Value>wordpress-seo acf-to-rest-api</Value>
+    </Variable>
+    <Variable>
+      <Name>TITLE</Name>
+      <Value>WordPress</Value>
+    </Variable>
+    <Variable>
+      <Name>URL</Name>
+      <Value>http://localhost:8000</Value>
+    </Variable>
+    <Variable>
+      <Name>BASIC_AUTH_ENABLED</Name>
+      <Value>false</Value>
+    </Variable>
+    <Variable>
+      <Name>ALLOWED_IP</Name>
+      <Value>127.0.0.1</Value>
+    </Variable>
+  </Environment>
+  <Config Name="SERVER_NAME" Target="SERVER_NAME" Default="" Mode="" Description="Container Variable: SERVER_NAME" Type="Variable" Display="always" Required="true" Mask="false">localhost</Config>
+  <Config Name="ADMIN_NAME" Target="ADMIN_NAME" Default="" Mode="" Description="Container Variable: ADMIN_NAME" Type="Variable" Display="always" Required="true" Mask="false">admin</Config>
+  <Config Name="ADMIN_PASSWORD" Target="ADMIN_PASSWORD" Default="" Mode="" Description="Container Variable: ADMIN_PASSWORD" Type="Variable" Display="always" Required="true" Mask="true">admin</Config>
+  <Config Name="ADMIN_EMAIL" Target="ADMIN_EMAIL" Default="" Mode="" Description="Container Variable: ADMIN_EMAIL" Type="Variable" Display="always" Required="true" Mask="false">admin@admin.com</Config>
+  <Config Name="PLUGINS" Target="PLUGINS" Default="" Mode="" Description="Container Variable: PLUGINS" Type="Variable" Display="always" Required="true" Mask="false">wordpress-seo acf-to-rest-api</Config>
+  <Config Name="TITLE" Target="TITLE" Default="" Mode="" Description="Container Variable: TITLE" Type="Variable" Display="always" Required="true" Mask="false">WordPress</Config>
+  <Config Name="URL" Target="URL" Default="" Mode="" Description="Container Variable: URL" Type="Variable" Display="always" Required="true" Mask="false">http://localhost:8000</Config>
+  <Config Name="BASIC_AUTH_ENABLED" Target="BASIC_AUTH_ENABLED" Default="" Mode="" Description="Container Variable: BASIC_AUTH_ENABLED" Type="Variable" Display="always" Required="true" Mask="false">false</Config>
+  <Config Name="ALLOWED_IP" Target="ALLOWED_IP" Default="" Mode="" Description="Container Variable: ALLOWED_IP" Type="Variable" Display="always" Required="true" Mask="false">127.0.0.1</Config>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8000</HostPort>
+        <ContainerPort>8000</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Version></Version>
+   <WebUI>http://[IP]:[PORT:8000]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/tekmanic/docker-templates/main/tekmanic/wordpress.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/tekmanic/docker-templates/main/tekmanic/icons/wordpress.png</Icon>
+</Container>
