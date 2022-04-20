@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container>
   <Beta>True</Beta>
-  <Category>Other, Network:Web, Status:Stable</Category>
+  <Category>Other Network:Web Status:Stable</Category>
   <Name>tekmanic-wordpress</Name>
   <Description>WordPress is a free and open source blogging tool and a content management system (CMS) based on PHP and MySQL, which runs on a web hosting service.
    [br][br]
@@ -11,9 +11,10 @@ This is a customized version of wordpress intended for development, allowing to 
 - Automatically install the desired plugins using wp-cli[br]
 - Can enable basic auth on the site to limit who can access initially[br] </Description>
   <Project>https://wordpress.org/</Project>
+  <Support>https://github.com/tekmanic/deb-wordpress</Support>
   <Registry>https://hub.docker.com/r/tekmanic/deb-wordpress/</Registry>
   <Repository>tekmanic/deb-wordpress:latest</Repository>
-    <GitHub>https://github.com/tekmanic/deb-wordpress</GitHub>
+  <GitHub>https://github.com/tekmanic/deb-wordpress</GitHub>
   <Environment>
     <Variable>
       <Name>SERVER_NAME</Name>
@@ -52,6 +53,8 @@ This is a customized version of wordpress intended for development, allowing to 
       <Value>127.0.0.1</Value>
     </Variable>
   </Environment>
+   <Config Name="Port" Target="80" Default="80" Mode="tcp" Description="Port" Type="Port" Display="always" Required="false" Mask="false">80</Config>
+  <Config Name="Appdata" Target="/usr/src/wordpress/" Default="/mnt/user/appdata/tekmanic-wordpress/" Mode="rw" Description="Appdata" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/tekmanic-wordpress/</Config>
   <Networking>
     <Mode>bridge</Mode>
     <Publish>
