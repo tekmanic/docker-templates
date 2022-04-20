@@ -52,15 +52,6 @@ This is a customized version of wordpress intended for development, allowing to 
       <Value>127.0.0.1</Value>
     </Variable>
   </Environment>
-  <Config Name="SERVER_NAME" Target="SERVER_NAME" Default="" Mode="" Description="Container Variable: SERVER_NAME" Type="Variable" Display="always" Required="true" Mask="false">localhost</Config>
-  <Config Name="ADMIN_NAME" Target="ADMIN_NAME" Default="" Mode="" Description="Container Variable: ADMIN_NAME" Type="Variable" Display="always" Required="true" Mask="false">admin</Config>
-  <Config Name="ADMIN_PASSWORD" Target="ADMIN_PASSWORD" Default="" Mode="" Description="Container Variable: ADMIN_PASSWORD" Type="Variable" Display="always" Required="true" Mask="true">admin</Config>
-  <Config Name="ADMIN_EMAIL" Target="ADMIN_EMAIL" Default="" Mode="" Description="Container Variable: ADMIN_EMAIL" Type="Variable" Display="always" Required="true" Mask="false">admin@admin.com</Config>
-  <Config Name="PLUGINS" Target="PLUGINS" Default="" Mode="" Description="Container Variable: PLUGINS" Type="Variable" Display="always" Required="true" Mask="false">wordpress-seo acf-to-rest-api</Config>
-  <Config Name="TITLE" Target="TITLE" Default="" Mode="" Description="Container Variable: TITLE" Type="Variable" Display="always" Required="true" Mask="false">WordPress</Config>
-  <Config Name="URL" Target="URL" Default="" Mode="" Description="Container Variable: URL" Type="Variable" Display="always" Required="true" Mask="false">http://localhost:8000</Config>
-  <Config Name="BASIC_AUTH_ENABLED" Target="BASIC_AUTH_ENABLED" Default="" Mode="" Description="Container Variable: BASIC_AUTH_ENABLED" Type="Variable" Display="always" Required="true" Mask="false">false</Config>
-  <Config Name="ALLOWED_IP" Target="ALLOWED_IP" Default="" Mode="" Description="Container Variable: ALLOWED_IP" Type="Variable" Display="always" Required="true" Mask="false">127.0.0.1</Config>
   <Networking>
     <Mode>bridge</Mode>
     <Publish>
